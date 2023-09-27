@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3b9657ac-294d-4356-98db-fbd8d2c8d2de}</ProjectGuid>
-    <RootNamespace>firstconsoleapplication1</RootNamespace>
+    <ProjectGuid>{11f14783-71ce-4ae4-a2e2-197ba069ef22}</ProjectGuid>
+    <RootNamespace>firstConsoleApplication1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="firstconsoleapplication1.cpp" />
+    <ClCompile Include="firstConsoleApplication1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
