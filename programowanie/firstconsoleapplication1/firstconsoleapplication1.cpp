@@ -6,6 +6,13 @@
 int main()
 {
     std::cout << "Hello World!.\n";
+    std::cout << "ebebebebebebeb \n";
+    std::cout << 'X'; // stała znakowa - musi być jeden znak
+    std::cout << "\n"; 
+    std::cout << '\n';
+    std::cout << 257 << "\n";
+    //stała liczbowa całkowita
+        std::cout << 12.5 << "\n"; //stała liczbowa rzeczywista
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
