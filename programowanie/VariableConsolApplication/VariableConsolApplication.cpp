@@ -9,8 +9,16 @@ void task2()
     std::cin >> lenghtInMeterFromUser;
 
     float lenghtInCentimeter; 
-    lenghtInCentimeter = lenhtInMeterFromUser / 100;
+    lenghtInCentimeter = lenghtInMeterFromUser * 100;
 
+    float lenghtInMilimeter = lenghtInCentimeter * 10;
+    
+    float lenghtInKilometer = lenghtInMeterFromUser / 1000;
+
+    std::cout << "Metry: " << lenghtInMeterFromUser << "\n";
+    std::cout << "Centymetry: " << lenghtInCentimeter << "\n";
+    std::cout << "Kilometry: " << lenghtInKilometer << "\n";
+    std::cout << "Milimetry: " << lenghtInMilimeter << "\n";
 }
 
 void task1()
