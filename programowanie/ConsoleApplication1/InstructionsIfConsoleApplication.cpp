@@ -1,10 +1,7 @@
 ﻿
 #include <iostream>
 
-int main()
-{
-    task1();
-}
+
 
 void task1()
 {
@@ -17,8 +14,25 @@ void task1()
         std::cout << "Liczba jest dodatnia \n";
     }
 
-    if (number < 0);
+    if (number <= 0);
     {
-
+        std::cout << "Liczba jest ujemna\n";
     }
-} 
+}
+
+//wersja 2
+
+if (number > 0)
+{
+    std::cout << "Liczba jest dodatnia\n";
+}
+
+else
+{
+    std::cout << "Liczba jest ujemna lub wynosi zero\n";
+}
+
+int main()
+{
+    task1();
+}
