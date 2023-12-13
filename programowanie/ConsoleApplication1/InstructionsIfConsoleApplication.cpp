@@ -1,7 +1,21 @@
 ﻿
 #include <iostream>
 
+/*
+Operatory porównania:
+>   większośći
+<   mniejszości
+>=  większe bądź równe
+<=  mniejsze bądź równe
+==  równe
+!=  różne
 
+Operatory logiczne:
+
+||  or/lub
+&&  and/i
+
+*/
 
 void task1()
 {
@@ -20,19 +34,36 @@ void task1()
     }
 }
 
-//wersja 2
 
-if (number > 0)
+void task2()
 {
-    std::cout << "Liczba jest dodatnia\n";
-}
+    int number;
+    std::cout << "Podaj liczbe \n";
+    std::cin >> number;
 
-else
-{
-    std::cout << "Liczba jest ujemna lub wynosi zero\n";
+    if (number <= 1)
+    {
+        if (number < 10)
+        {
+            std::cout << "Liczba jest w zakresie\n";
+        }
+        else
+        {
+            std::cout << "Liczba nie jest w zakresie\n";
+        }
+    }
+    else
+    {
+        std::cout << "Liczba nie jest w zakresie\n";
+    }
+
+    //wersja 2
+
+    if(number >= && number
 }
 
 int main()
 {
-    task1();
+    //task1();
+    task2();
 }
