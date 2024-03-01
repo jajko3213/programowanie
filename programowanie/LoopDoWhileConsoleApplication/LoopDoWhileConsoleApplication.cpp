@@ -159,15 +159,88 @@ void task4()
 
 void task5()
 {
-	int number
-	std::cout << "Podaj liczbe calkowita";
-	std::cin >> number;
+	int number;
+	do
+	{
+		std::cout << "podaj liczbe dodatnia";
+		std::cin >> number;
+	} while (number < 0);
 
-	int sumOfDigits = 
-	
+	int numberOfDigit = 0;
+	do
+	{
+		number = number / 10;
+		numberOfDigit++;
+	} while (number > 0);
 
+	std::cout << "ilosc cyfr w liczbie to" << numberOfDigit;
 }
 
+/*Napisz program, który sprawdza czy więcej jest cyfr parzystych, czy nieparzystych we wczytanej liczbie.*/
+
+void task6()
+{
+	int number;
+	int even = 0;
+	int odd = 0;
+
+	std::cout << "podaj liczbe";
+	std::cin >> number;
+
+	while (number != 0)
+	{
+		int cyfra = number % 10;
+
+		if (cyfra % 2 == 0)
+		{
+			even++;
+		}
+		else
+		{
+			odd++;
+		}
+		number /= 10;
+	}
+	if (even < odd)
+		std::cout << "wiecej jest cyfr parzystych ";
+	if (even == odd)
+		std::cout << "cyfr parzystych jest tyle samo co nieparzystych ";
+	else
+		std::cout << "wiecej jest cyfr parzystych ";
+}
+
+/*Poproś użytkownika o podawanie liczb, aż wprowadzi zero.Oblicz sumę oraz średnią arytmetyczną wprowadzonych liczb.*/
+
+void task7()
+{
+	int number;
+	int sum = 0;
+	int amount = 0;
+
+	std::cout << "podaj liczby (wpisz 0, aby zakonczyc)\n";
+
+	do
+	{
+
+		std::cin >> number;
+		sum += number;
+		amount++;
+	} while (number != 0);
+
+	sum -= 0;
+	amount--;
+
+	if (amount > 0)
+	{
+		double srednia = static_cast<double>(sum) / amount;
+		std::cout << "suma wprowadzonych liczb" << sum << "\n";
+		std::cout << "srednia arytmetyczna" << srednia << "\n";
+	}
+	else
+	{
+		std::cout << "nie wprowadzono zadnych liczb. \n";
+	}
+}
 
 int main()
 {
@@ -175,7 +248,8 @@ int main()
 	//task2();
 	//task3();
 	//task4();
-	task5();
-
+	//task5();
+	//task6();
+	task7();
 }
 
