@@ -66,9 +66,43 @@ void task2()
         b = tmpA % b;
 
     }
+
+    std::cout << "NWD = " << a << "/n";
+
+}
+
+//Miasto T. ma obecnie 100 tys. mieszkańców, ale jego populacja rośnie co roku o 3% rocznie. 
+//Miasto B. ma 300 tys. mieszkańców i ta liczba rośnie w tempie 2% na rok.
+// Wykonaj symulację prezentującą liczbę mieszkańców w obu miastach i zatrzymującą się, 
+// gdy liczba mieszkańców miasta T. przekroczy liczbę z miasta B.
+
+void task3()
+{
+    int miastoT = 100000;
+    
+    int miastoB = 300000;
+
+    double wzrostT = 0.03;
+    double wzrostB = 0.02;
+
+    int rok = 1;
+
+    do
+    {
+        miastoT = miastoT + miastoT * wzrostT;
+        miastoB = miastoB + miastoB * wzrostB;
+        rok++;
+
+        std::cout << "rok" << rok << "\n";
+
+        std::cout << "liczba mieszkancow miasta T wynosi" << miastoT << "\n";
+
+        std::cout << "liczba mieszkancow miasta B wynosi" << miastoB << "\n";
+
+    } while (miastoT > miastoB);
 }
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    task3;
 }
