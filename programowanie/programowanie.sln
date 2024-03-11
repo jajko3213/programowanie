@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopDoWhileConsoleApplicati
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopWhileConsoleApplication", "LoopWhileConsoleApplication\LoopWhileConsoleApplication.vcxproj", "{5C6BFCD3-A6B0-499E-A780-AAEB2B7753EF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoopForConsoleApplication1", "LoopForConsoleApplication1\LoopForConsoleApplication1.vcxproj", "{7A86016E-2A41-4911-B848-72B7DB167F84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -65,6 +67,14 @@ Global
 		{5C6BFCD3-A6B0-499E-A780-AAEB2B7753EF}.Release|x64.Build.0 = Release|x64
 		{5C6BFCD3-A6B0-499E-A780-AAEB2B7753EF}.Release|x86.ActiveCfg = Release|Win32
 		{5C6BFCD3-A6B0-499E-A780-AAEB2B7753EF}.Release|x86.Build.0 = Release|Win32
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Debug|x64.ActiveCfg = Debug|x64
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Debug|x64.Build.0 = Debug|x64
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Debug|x86.ActiveCfg = Debug|Win32
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Debug|x86.Build.0 = Debug|Win32
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Release|x64.ActiveCfg = Release|x64
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Release|x64.Build.0 = Release|x64
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Release|x86.ActiveCfg = Release|Win32
+		{7A86016E-2A41-4911-B848-72B7DB167F84}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +86,7 @@ Global
 		{B339F3DE-CD1A-4F7B-8B64-87853C16108B} = {272A43F5-0C40-4300-B5A1-F961983DA3E9}
 		{07F24E13-2F31-4F33-A25F-37EEDBAE5D07} = {272A43F5-0C40-4300-B5A1-F961983DA3E9}
 		{5C6BFCD3-A6B0-499E-A780-AAEB2B7753EF} = {272A43F5-0C40-4300-B5A1-F961983DA3E9}
+		{7A86016E-2A41-4911-B848-72B7DB167F84} = {272A43F5-0C40-4300-B5A1-F961983DA3E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C90B96AC-D7E4-4CDF-8CD3-0FF339735DEE}
