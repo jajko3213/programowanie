@@ -48,11 +48,52 @@ void task1()
 // Program obliczający sumę liczb od 1 do 100
 void task2()
 {
-    int suma 
+    int suma = 0;
+
+    for (int i = 1; i <= 100; ++i)
+    {
+        suma += i;
+    }
+
+    std::cout << "suma liczb od 1 do 100 wynosi: " << suma << "\n";
+
 }
 
+//Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.)
+
+void task3()
+{
+    for (int i = 1; i <= 10; ++i)
+    {
+        std::cout << "kwadrat liczby" << i << "to" << i * i << "\n";
+    }
+}
+
+//Program wyświetlający na ekranie tabliczkę mnożenia od 1 do 9 (np. 1x1=1, 1x2=2, 1x3=3 itd.).
+
+void task4()
+{
+    for (int i = 1; i <= 9; ++i)
+    {
+        for (int j = 1; j <= 9; ++j)
+        {
+            std::cout << i << " * " << j << " = " << i * j << "\n";
+        }
+    }
+}
+
+//Program obliczający sumę kwadratów liczb od 1 do 10
+
+void task5()
+{
+    for (int i = 1; i <= 10; ++i)
+    {
+
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    task4();
+
 }
