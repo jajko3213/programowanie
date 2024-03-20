@@ -82,18 +82,30 @@ void task4()
     }
 }
 
-//Program obliczający sumę kwadratów liczb od 1 do 10
-
+//Program, który wczyta podstawę oraz wykładnik oraz wyliczy wynik.
 void task5()
 {
-    for (int i = 1; i <= 10; ++i)
-    {
 
-    }
 }
+
+//Program obliczający sumę kwadratów liczb od 1 do 10
+
+void task6()
+{
+    int sumOfSquares = 0;
+
+    for (int number = 1; number <= 10; number++)
+    {
+        sumOfSquares += number * number;
+    }
+
+    std::cout << "Suma kwadratow liczb od 1 do 10 wynosi:" << sumOfSquares << "\n";
+}
+
+
 
 int main()
 {
-    task4();
+    task6();
 
 }
