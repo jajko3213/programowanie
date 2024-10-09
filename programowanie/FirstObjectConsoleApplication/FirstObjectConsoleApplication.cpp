@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 class BankAccount
@@ -7,11 +8,23 @@ public:
 	std::string owner; //w³aœciciel
 	std::string currency; //waluta
 
-	void AccountInformation()
+	void AccountInformation();
+	
+	bool widthdrawalFromAccount(BankAccount& account, double amount)
 	{
-		std::cout << "Informacja o koncie bankowym.\n";
-		std::cout << "W³aœciciel: " << owner << "\n";
-		std::cout << "Saldo: " << balance << " " << currency << "\n";
+		amount = abs(amount);
+		if (account.balance - amount >= 0)
+		{
+			account.balance = account.balance - amount;
+			return true;
+		}
+		return false;
+	}
+
+	void transferBetweenAcounts(BankAccount& sourceAccount, BankAccount& targetAccount, double amount)
+	{
+		if (widthdrawalFromAccount(sourceAccount, amount) == true)
+			targetAccount.DepositToAccount(amount);
 	}
 
 	void DepositToAccount(double amount)
