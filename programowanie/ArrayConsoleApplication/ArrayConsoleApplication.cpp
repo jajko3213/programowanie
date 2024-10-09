@@ -1,4 +1,4 @@
-﻿﻿// ArrayConsoleApplication.cpp 
+﻿// ArrayConsoleApplication.cpp 
 
 #include <iostream>
 
@@ -217,7 +217,7 @@ void task7()
 				sieve[j] = false;
 		}
 	}
-
+	
 	std::cout << "Liczby pierwsze:\n";
 	for (int i = 2; i < ARRAY_NUMBERS_SIZE; i++)
 	{
@@ -229,5 +229,5 @@ void task7()
 int main()
 {
 	task1();
-	task2();
+	task1();
 }
