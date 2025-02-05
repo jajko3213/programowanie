@@ -1,11 +1,36 @@
 #include <iostream>
 #include "BankAccount.h"
 
+BankAccount::BankAccount()
+{
+	balance = 0;
+	owner = "Nieznany";
+	currency = "z³";
+}
+
+BankAccount::BankAccount(double b, std::string o, std::string c)
+{
+	balance = b;
+	owner = o;
+	currency = c;
+}
+
+double BankAccount::GetBalance()
+{
+	return balance;
+}
+
+void BankAccount::SetBalance(double b)
+{
+	if (b >= 0)
+		balance = b;
+}
+
 void BankAccount::AccountInformation()
 {
-	std::cout << "Informacja o koncie bankowym.\n";
+	std::cout << "Informacje o koncie bankowym.\n";
 	std::cout << "W³aœciciel: " << owner << "\n";
-	std::cout << "Saldo: " << balance << " " << currency << "\n";
+	std::cout << "Saldo: " << balance << " " << currency << "\n\n"; 
 }
 
 void BankAccount::DepositToAccount(double amount)
@@ -14,19 +39,20 @@ void BankAccount::DepositToAccount(double amount)
 	balance = balance + amount;
 }
 
-bool BankAccount::widthdrawalFromAccount(BankAccount& account, double amount)
+bool BankAccount::WidthDrawFromAccount(double amount)
 {
 	amount = abs(amount);
-	if (account.balance - amount >= 0)
+	if (balance - amount >= 0)
 	{
-		account.balance = account.balance - amount;
+
+		balance = balance - amount;
 		return true;
 	}
 	return false;
 }
 
-void BankAccount::transferBetweenAcounts(BankAccount& sourceAccount, BankAccount& targetAccount, double amount)
+void BankAccount::TransferBetweenAccounts(BankAccount& targetAccount, double amount)
 {
-	if (widthdrawalFromAccount(sourceAccount, amount) == true)
+	if (WidthDrawFromAccount(amount) == true)
 		targetAccount.DepositToAccount(amount);
 }

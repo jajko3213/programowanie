@@ -1,23 +1,16 @@
 #include <iostream>
 
-
-
-
-
-
-void getCoordinate(double &x, double &y)
+//Napisz program, który pobierze wspó³rzêdne 2D i obliczy jak daleko jest ten punkt od œrodka uk³adu wspó³rzêdnych
+void getCoordinate(double& x, double& y)
 {
-	std::cout << "Podaj x\n";
+	std::cout << "Podaj wspó³rzêdn¹ x:\n";
 	std::cin >> x;
 
-	std::cout << "Podaj y\n";
+	std::cout << "Podaj wspó³rzêdn¹ y:\n";
 	std::cin >> y;
 }
 
-//Napisz program, który pobierze wspó³rzêdne 2D
-//i obliczy jak daleko jest ten punkt od
-// œrodka uk³adu wspó³rzêdnych.
-void task1()
+void task()
 {
 	double x, y;
 
@@ -25,5 +18,5 @@ void task1()
 
 	double distance = sqrt(x * x + y * y);
 
-	std::cout << "Odleg³oœæ od œrodka to: " << distance << "\n";
+	std::cout << "Odleg³oœæ od œrodka to: " << distance;
 }

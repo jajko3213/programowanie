@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2640ca95-3cbb-4dc5-ab0a-ef3d2553646b}</ProjectGuid>
+    <ProjectGuid>{84d010c5-62a8-4126-b159-30aa9b83c73d}</ProjectGuid>
     <RootNamespace>TicTacToeConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TicTacToeConsoleApplication.cpp" />
     <ClCompile Include="TicTacToeGameDetails.cpp" />
+    <ClCompile Include="TicTacToeConsoleApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TicTacToeGameDetails.h" />

@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2422c97f-c835-44ca-829a-3b5da43990ea}</ProjectGuid>
+    <ProjectGuid>{fb8c1456-40f5-4222-8ab0-9ea51035f122}</ProjectGuid>
     <RootNamespace>InstructionIfConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

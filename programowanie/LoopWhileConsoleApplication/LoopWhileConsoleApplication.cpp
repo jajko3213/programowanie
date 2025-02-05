@@ -1,19 +1,16 @@
-ï»¿// LoopWhileConsoleApplication.cpp 
-
 #include <iostream>
 
-//Napisz program, ktÃ³ry policzy sumÄ™ cyfr podanej przez uÅ¼ytkownika liczby.
+//Napisz program, który policzy sumê cyfr podanej przez u¿ytkownika liczby.
 void task1()
 {
-	int number;
+	
+	int number, numberOfDigit = 1;
+	
 	do
 	{
-		std::cout << "Podaj liczbÄ™ dodatniÄ…\n";
+		std::cout << "Podaj liczbê dodatni¹: \n";
 		std::cin >> number;
 	} while (number < 0);
-
-	int numberOfDigit = 1;
-
 	/*
 	if (number > 9)
 	{
@@ -37,104 +34,123 @@ void task1()
 		numberOfDigit++;
 	}
 
-	std::cout << "IloÅ›Ä‡ cyfr w liczbie to " << numberOfDigit << "\n";
+	std::cout << "Iloœæ cyfr w liczbie wynosi: " << numberOfDigit;
 }
 
-//Napisz program, ktÃ³ry policzy NWD dwÃ³ch liczb.
-//NWD(a,b) = a jeÅ›li b = 0
-//NWD(a,b) = NWD(b, a%b) jeÅ›li b != 0
+//Napisz program, który policzy NWD dwóch liczb.
+/*
+	 Wzór na NWD = { a , b = 0												}
+				   { NWD(b, a % b), b != 0 (skreœlony znak równoœci, nie !=)}
+*/
 void task2()
 {
-	int a;
-	std::cout << "Podaj pierwszÄ… liczbÄ™\n";
-	std::cin >> a;
+	int firstNumber, secondNumber;
 
-	int b;
-	std::cout << "Podaj drugÄ… liczbÄ™\n";
-	std::cin >> b;
-	/*
-	if (b != 0)
+	do
 	{
-		int tmpA = a;
-		a = b;
-		b = tmpA % b;
-		if (b != 0)
+		std::cout << "Podaj pierwsz¹ liczbê dodatni¹: \n";
+		std::cin >> firstNumber;
+	} while (firstNumber < 0);
+
+	do
+	{
+		std::cout << "Podaj drug¹ liczbê dodatni¹: \n";
+		std::cin >> secondNumber;
+	} while (secondNumber < 0);
+
+	/*if (secondNumber != 0)
+	{
+		int tmpfirstNumber = firstNumber;
+		firstNumber = secondNumber;
+		secondNumber = tmpfirstNumber % secondNumber;
+		if (secondNumber != 0)
 		{
 			//...
 		}
 	}
 	*/
-	while (b != 0)
+
+	while (secondNumber != 0)
 	{
-		int tmpA = a;
-		a = b;
-		b = tmpA % b;
+		int tmpfirstNumber = firstNumber;
+		firstNumber = secondNumber;
+		secondNumber = tmpfirstNumber % secondNumber;
 	}
 
-	std::cout << "NWD = " << a << "\n";
-
+	std::cout << "NWD = " << firstNumber;
 }
 
-//Miasto T. ma obecnie 100 tys. mieszkaÅ„cÃ³w, ale jego populacja roÅ›nie co roku o 3% rocznie. 
-//Miasto B. ma 300 tys. mieszkaÅ„cÃ³w i ta liczba roÅ›nie w tempie 2% na rok.
-// Wykonaj symulacjÄ™ prezentujÄ…cÄ… liczbÄ™ mieszkaÅ„cÃ³w w obu miastach i zatrzymujÄ…cÄ… siÄ™, 
-// gdy liczba mieszkaÅ„cÃ³w miasta T. przekroczy liczbÄ™ z miasta B.
+/*
+Miasto T. ma obecnie 100 tys. mieszkañców, ale jego populacja roœnie co roku o 3% rocznie.
+Miasto B. ma 300 tys. mieszkañców i ta liczba roœnie w tempie 2% na rok.
+ Wykonaj symulacjê prezentuj¹c¹ liczbê mieszkañców w obu miastach i zatrzymuj¹c¹ siê,
+ gdy liczba mieszkañców miasta T. przekroczy liczbê z miasta B.
+*/
 
+//W tej pêtli s¹ 2 zmienne streuj¹ce, zale¿y co jest w warunku
 void task3()
 {
-	double cityT = 100000;
-	double cityB = 300000;
+	double tCityPopulation = 100000, bCityPopulation = 300000;
+	int years = 0;
 
-	int year = 0;
-
-	while (cityT < cityB)
+	while (tCityPopulation < bCityPopulation)
 	{
-		cityT = cityT * 1.03;
-		cityB = cityB * 1.02;
-		year++;
+		tCityPopulation = tCityPopulation * 1.03;
+		bCityPopulation = bCityPopulation * 1.02;
+		years++;
 	}
 
-	std::cout << "Miasto T przegoni miasto B po " << year << " latach\n";
+	std::cout << "Populacja miasta T wynios³a " << tCityPopulation << " po " << years << " latach\n";
+	std::cout << "Populacja miasta B wynios³a " << bCityPopulation << " po " << years << " latach";
 }
 
-//Sprawdzanie czy liczba jest palindromem.
+//Sprawdzenie czy liczba jest palindromem
 void task4()
 {
 	int number;
-	std::cout << "Podaj liczbÄ™ dodatniÄ…\n";
-	std::cin >> number;
+	
+	do
+	{
+		std::cout << "Podaj liczbê dodatni¹: \n";
+		std::cin >> number;
+	} while (number < 0);
 
 	int tmpNumber = number;
-	int reverseNumber = 0;
-	while (tmpNumber > 0)
+	int reversNumber = 0;
+	while ( tmpNumber > 0)
 	{
 		int rest = tmpNumber % 10;
-		reverseNumber = reverseNumber * 10 + rest;
+		reversNumber = reversNumber * 10 + rest;
 		tmpNumber = tmpNumber / 10;
 	}
 
-	if (number == reverseNumber)
-		std::cout << "Liczba jest palindromem\n";
+	if (number == reversNumber)
+		std::cout << "Liczba jest palindromem";
 	else
-		std::cout << "Liczba nie jest palindromem\n";
+		std::cout << "Liczba jest nie palindromem";
 }
 
-//Napisz program, ktÃ³ry wyÅ›wietli "Hello world" tyle razy ile chce uÅ¼ytkownik
+//Napisz program, który wyœwietli "Hello World" tyle razy ile chce u¿ytkownik
 void task5()
 {
-	int number;
-	std::cout << "Podaj liczbÄ™ dodatniÄ…\n";
-	std::cin >> number;
+	int number, counter = 0;
 
-	int counter = 0;
+	do
+	{
+		std::cout << "Podaj liczbê dodatni¹: \n";
+		std::cin >> number;
+	} while (number < 0);
+
+	
 	while (counter != number)
 	{
-		std::cout << "Hello world\n";
+		std::cout << "Hello World\n";
 		counter++;
 	}
 }
 
 int main()
 {
+	setlocale(LC_CTYPE, "polish");
 	task5();
 }

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8d2e605d-091f-4f73-93cb-3324cd266295}</ProjectGuid>
+    <ProjectGuid>{108a19e3-cfa1-428d-961b-4635a6667312}</ProjectGuid>
     <RootNamespace>FirstStructConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -128,9 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FirstStructConsoleApplication.cpp" />
-    <ClCompile Include="Task1.cpp" />
-    <ClCompile Include="Task2.cpp" />
     <ClCompile Include="Task3.cpp" />
+    <ClCompile Include="Task2.cpp" />
+    <ClCompile Include="Task1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tasks.h" />
