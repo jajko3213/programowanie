@@ -1,20 +1,84 @@
-ï»¿// PointersConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// PointersConsoleApplication.cpp 
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//int t[100000000];
+	int firstVar = 5;
+	int secondVar = 9;
+
+	std::cout << "firstVar = " << firstVar << "\n";
+	std::cout << "adres zmiennej firstVar = " << (&firstVar) << "\n";
+	std::cout << "*(&firstVar) = " << *(&firstVar) << "\n";
+	std::cout << "secondVar = " << secondVar << "\n";
+	std::cout << "adres zmiennej secondVar = " << (&secondVar) << "\n";
+
+	int* ptr = &firstVar;
+	//ptr = &firstVar;
+
+	std::cout << "ptr = " << ptr << "\n";
+	std::cout << "*ptr = " << *ptr << "\n";
+	*ptr = 99;
+	std::cout << "firstVar = " << firstVar << "\n";
+
+	bool thirdVar = true;
+
+	bool* boolPtr;
+	boolPtr = &thirdVar;
+
+	int tab[3] = { 2, 98, 4 };
+	std::cout << "tab " << tab << "\n";
+	std::cout << "tab[0] = " << tab[0] << "\n";
+	std::cout << "tab[0] = " << *tab << "\n";
+	std::cout << "tab[0] = " << *(tab + 0) << "\n";
+	std::cout << "tab[1] = " << tab[1] << "\n";
+	std::cout << "tab[1] = " << *(tab + 1) << "\n";
+	std::cout << "tab[2] = " << tab[2] << "\n";
+	std::cout << "tab[2] = " << *(tab + 2) << "\n";
+
+
+	std::cout << "Zawartoœæ tablicy:\n";
+	for (int i = 0; i < 3; i++)
+	{
+		std::cout << i << ": " << tab[i] << "\n";
+		std::cout << i << ": " << *(tab + i) << "\n";
+	}
+
+	ptr = new int;
+	*ptr = 878;
+
+	std::cout << "Adres obszaru na stercie " << ptr << "\n";
+	std::cout << "Zawartoœæ ze sterty " << *ptr << "\n";
+
+	delete ptr;
+	ptr = NULL;
+
+	if (ptr != NULL)
+		std::cout << "Zawartoœæ ze sterty " << *ptr << "\n";
+	/*
+	while (true)
+	{
+		new int;
+	}
+	*/
+
+	int count;
+	std::cout << "Podaj rozmiar tablicy\n";
+	std::cin >> count;
+	int *t = new int[count];
+	*t = 45;
+	*(t + 1) = 87;
+	t[3] = 99;
+
+	int* tt = new int[count * 2];
+	for (int i = 0; i < count; i++)
+	{
+		tt[i] = t[i];
+	}
+	delete[] t;
+	t = tt;
+	count = count * 2;
+
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

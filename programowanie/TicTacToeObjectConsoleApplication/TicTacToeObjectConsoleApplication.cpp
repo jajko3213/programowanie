@@ -1,20 +1,49 @@
-ï»¿// TicTacToeObjectConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include "Player.h"
+#include "TicTacToeBoard.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//inicjowanie gry
+	unsigned int playersCount = 2;
+	unsigned int currentPlayerNumber = 0;
+	Player** players = new Player * [playersCount];
+	players[0] = new Player('O');
+	players[1] = new Player('X');
+
+	int fieldNumber;
+
+	unsigned int boardSize = 3;
+	TicTacToeBoard ticTacToeBoard(boardSize);
+
+	ticTacToeBoard.clearBord();
+
+	while (true)
+	{
+		ticTacToeBoard.drawBoard();
+		
+		fieldNumber = players[currentPlayerNumber]->GetFieldNumber();
+
+		if (ticTacToeBoard.isNotCorrectMove(fieldNumber))
+			continue;
+
+		ticTacToeBoard.SetBoardField(fieldNumber, players[currentPlayerNumber]->GetSymbol());
+
+		ticTacToeBoard.drawBoard();
+
+		if (ticTacToeBoard.isWin(players[currentPlayerNumber]->GetSymbol()) == true)
+		{
+			std::cout << "Wygrana!!!\n";
+			break;
+		}
+
+		if (ticTacToeBoard.isDraw())
+		{
+			std::cout << "Remis!!!\n";
+			break;
+		}
+
+		//zmiana aktualnego gracza na nastêpnege
+		currentPlayerNumber = (currentPlayerNumber + 1) % playersCount;
+	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
