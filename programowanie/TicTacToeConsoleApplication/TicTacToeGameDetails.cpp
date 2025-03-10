@@ -23,7 +23,7 @@ void drawRow(unsigned int boardSize, char board[], int rowNumber)
 {
 	for (int fieldNumber = 0; fieldNumber < boardSize; fieldNumber++)
 	{
-		std::cout << " " << board[boardSize * rowNumber + fieldNumber] << " ";
+		std::cout << " " << board[boardSize * rowNumber + fieldNumber] <<" ";
 		if (fieldNumber < boardSize - 1)
 			std::cout << "|";
 	}
@@ -44,14 +44,14 @@ void drawHorizontalFrame(unsigned int boardSize)
 void drawBoard(unsigned int boardSize, char board[])
 {
 	/*
-
- o | x | o
+	
+ o | x | o 
 ---+---+---
-   | x |
+   | x |   
 ---+---+---
-   |   | x
+   |   | x 
 
- o | x | o |
+ o | x | o |   
 ---+---+---+---
  o |   |   |
 ---+---+---+---
@@ -59,7 +59,7 @@ void drawBoard(unsigned int boardSize, char board[])
 ---+---+---+---
    |   |   |
 
-
+	
 	*/
 	system("cls");
 	for (int row = 0; row < boardSize; row++)

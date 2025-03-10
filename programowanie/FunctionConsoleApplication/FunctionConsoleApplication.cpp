@@ -1,30 +1,33 @@
+ï»¿// FunctionConsoleApplication.cpp
+
 #include <iostream>
 
 /*
-Funkcja - zbiór instrukcji. Definicja/deklaracja funkcji sk³ada siê z dwóch czêœci:
-* nagówek - sposób u¿ycia funkcji
+
+Funkcja - zbiÃ³r instrukcji. Definicja/deklaracja funkcji skÅ‚ada siÄ™ z dwÃ³ch czÄ™Å›ci:
+* nagÃ³wek - sposÃ³b uÅ¼ycia funkcji
 	- typ zwracany
 	- nazwa (poprawny identyfikator)
-	- parametrów w nawiasie (nieobowi¹zkowe)
-* cia³o - zbiór instrukcji
+	- parametrÃ³w w nawiasie (nieobowiÄ…znowe)
+* ciaÅ‚o - zbiÃ³r instrukcji
 
 typZwracany nazwaFuncji(parametry)
 {
-	//cia³o funkcji
+	//ciaÅ‚o funcji
 }
 */
 
 void showHello()
 {
-	std::cout << "Hello World\n";
+	std::cout << "Hello world\n";
 }
 
-void showHelloMaciek()
+void showWelcomeMaciek()
 {
-	std::cout << "Witaj Maciej\n";
+	std::cout << "Witaj Maciek\n";
 }
 
-void showHelloJan()
+void showWelcomeJan()
 {
 	std::cout << "Witaj Jan\n";
 }
@@ -36,26 +39,34 @@ void showWelcome(std::string n)
 
 void showWelcome(std::string n, int w)
 {
-	std::cout << "Witaj " << n << ". Wiek tej osoby to: " << w << " lat." << "\n";
+	showWelcome(n);
+	std::cout << "Wiek tej osoby to " << w << "\n";
 }
 
 void showWelcome(std::string n, int w, std::string a)
 {
 	showWelcome(n, w);
-	std::cout << "Adres to: " << a << "\n";
+	std::cout << "Adres to " << a << "\n";
 }
 
-void parameterTest(int& p) //przez referencje, jeœli by³oby przez wartoœæ to wartoœæ variable po wykonaniu funkcji wynosi³a by dalej 5
+void parameterTest(int& p)  //parametr przekazywany przez referencjÄ™
 {
-	std::cout << "Wartoœæ parametru: " << p << "\n";
+	std::cout << "WartoÅ›Ä‡ parametru " << p << "\n";
 	p++;
-	std::cout << "Wartoœæ parametru: " << p << "\n";
+	std::cout << "WartoÅ›Ä‡ parametru " << p << "\n";
 }
 
-int sum(int firstNumber, int secondNumber)
+void sum(int firstnumber, int secondNumber, int& result)
 {
 	int r;
-	r = firstNumber + secondNumber;
+	r = firstnumber + secondNumber;
+	result = r;
+}
+
+int sum(int firstnumber, int secondNumber)
+{
+	int r;
+	r = firstnumber + secondNumber;
 	return r;
 }
 
@@ -69,81 +80,50 @@ unsigned long long strong(int n)
 	return s;
 }
 
-//algorytm rekurencyjny
-unsigned long long strongv2(int n)
+unsigned long long strongV2(int n)
 {
 	unsigned long long s = 1;
+
 	if (n <= 1)
 		s = 1;
 	else
-		s = n * strongv2(n - 1); 
+		s = n * strongV2(n - 1);
+
 	return s;
 }
 
 int main()
 {
-	setlocale(LC_CTYPE, "polish");
-
 	/*
 	showHello();
-	//jakiœ kod
-	showHello();
-	showHelloMaciek();
-	showHelloJan();
-	std::cout << "\n";
+
+	showWelcomeMaciek();
+	showWelcomeJan();
+
 	std::string name;
-	name = "Mackiek";
+	name = "Maciek";
 	showWelcome(name);
 	name = "Jan";
 	showWelcome(name);
 	showWelcome("Anna");
-	int age = 10;
-	showWelcome("Damian", age, "ul.Krakowska 1");
+
+	showWelcome("Anna", 35);
+	showWelcome("Jan", 60, "ul. Majowa 5");
 	*/
-
-	//kolejnoœæ parametrów, kolejnoœæ deklaracji w funkcji np. void showWelcomeAndAge(std::string n, int w) -> "dasd", 4
-	//przeci¹¿enie funkcji - ta sama nazwa funkcji ró¿nica w parametrach
-	//dodanie przestrzeni
-
-	/*
-		namespace nazwaPrzestrzeni
-		{
-			np.funkcja
-		}
-		odwo³anie sie do ptzestrzeni nazwaPrzestrzeni::funkcja();
-		jeœli s¹ w sobie namespace to wtedy p1::p2::funkcja();
-		p1 - przestrzeñ 1
-
-		przekazanie do parametru przez wartoœæ lub referencje czyli odwo³anie aby u¿yæ referencji nale¿y u¿yæ typ& nazwa parametru
-		referencja = przekazanie orygina³u 
-		wartoœæ = kopia
-		sta³ej nie przeka¿e przez referencje
-		zwracanie przez parametr wyniku
-	*/
-
-	/* Zasady
-		DRY - don't repeat yourself - nie powtarzaj siê
-		KISS - Keept it simple, stupid - trzymaj prostotê g³upcze
-		YAGNI - you aren't gonna need it - nie potrzebujesz tego
-		SOLID
-		S - single responsibility - pojedyñcza odpowiedzialnoœæ
-	*/
-
-	/*
-	int variable = 5;
-	std::cout << "Wartoœæ zmiennej przed funkcj¹: " << variable << "\n";
+	
+	//parameterTest(89); //przez referencjÄ™ nie mogÄ™ przekazaÄ‡ staÅ‚ej
+	/*int variable = 5;
+	std::cout << "WartoÅ›Ä‡ zmiennej przed funkcjÄ… " << variable << "\n";
 	parameterTest(variable);
-	std::cout << "Wartoœæ zmiennej po funkcji: " << variable << "\n";
+	std::cout << "WartoÅ›Ä‡ zmiennej po wywoÅ‚aniu funkcji " << variable << "\n";
 
 	int result;
-	result = sum(15, 7) + 2;
-	std::cout << "Wynik sumowania to : " << result << "\n";
-	*/
+	sum(6, 8, result);
+	std::cout << "Wynik sumowania to " << result << "\n";
 
-	/*
-	int silnia;
-	std::cout << "Podaj z jakiej liczby chcesz uzyskaæ silnie.\n";
-	std::cin >> silnia;
-	std::cout << "Silnia z " << silnia << " wynosi: " << strongv2(silnia) << "\n";
+	result = sum(15, 7) + 2;
+	std::cout << "Wynik sumowania to " << result << "\n";
 	*/
+	std::cout << "Silnia liczby 10 to " << strongV2(10) << "\n";
+
 }

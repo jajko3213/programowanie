@@ -1,26 +1,28 @@
-#include <iostream>
+#include<iostream>
+
 
 struct bankAccount
 {
-	double balance; // stan konta
+	double balance; // saldo
 	std::string owner; //w³aœciciel
-	std::string currency; // waluta
+	std::string currency; //waluta
+
 };
 
 void accountInformation(bankAccount &account)
 {
-	std::cout << "Informacje o koncie bankowym.\n";
+	std::cout << "Informacja o koncie bankowym.\n";
 	std::cout << "W³aœciciel: " << account.owner << "\n";
-	std::cout << "Saldo: " << account.balance << " " << account.currency << "\n\n";
+	std::cout << "Saldo: " << account.balance << " " << account.currency << "\n";
 }
 
-void depositToAccount(bankAccount& account, double amount)
+void depositToAccount(bankAccount &account, double amount)
 {
 	amount = abs(amount);
 	account.balance = account.balance + amount;
 }
 
-bool widthDrawFromAccount(bankAccount& account, double amount)
+bool widthdrawalFromAccount(bankAccount& account, double amount)
 {
 	amount = abs(amount);
 	if (account.balance - amount >= 0)
@@ -31,9 +33,9 @@ bool widthDrawFromAccount(bankAccount& account, double amount)
 	return false;
 }
 
-void transferBetweenAccounts(bankAccount &sourceAccount, bankAccount &targetAccount, double amount)
+void transferBetweenAcounts(bankAccount &sourceAccount, bankAccount &targetAccount, double amount)
 {
-	if (widthDrawFromAccount(sourceAccount, amount) == true)
+	if (widthdrawalFromAccount(sourceAccount, amount) == true)
 		depositToAccount(targetAccount, amount);
 }
 
@@ -41,29 +43,25 @@ void task3()
 {
 	bankAccount firstAccount;
 	firstAccount.balance = 10000;
-	firstAccount.owner = "Jan Kowalski";
 	firstAccount.currency = "z³";
+	firstAccount.owner = "Jan Kowalski";
 
 	accountInformation(firstAccount);
-
-	depositToAccount(firstAccount, 500);
-
-	accountInformation(firstAccount);
-
 
 	bankAccount secondAccount;
 	secondAccount.balance = 15000;
-	secondAccount.owner = "Ewa Kowalska";
 	secondAccount.currency = "z³";
+	secondAccount.owner = "Ewa Nowak";
 
 	accountInformation(secondAccount);
 
-	widthDrawFromAccount(secondAccount, 500);
+	depositToAccount(firstAccount, -14.50);
+	accountInformation(firstAccount);
 
-	accountInformation(secondAccount);
+	widthdrawalFromAccount(firstAccount, 14.50);
+	accountInformation(firstAccount);
 
-	transferBetweenAccounts(secondAccount, firstAccount, 1000);
-
+	transferBetweenAcounts(secondAccount, firstAccount, 1000);
 	accountInformation(firstAccount);
 	accountInformation(secondAccount);
 }

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0699a201-1f2a-405c-9fa5-2d72ece2dc36}</ProjectGuid>
+    <ProjectGuid>{074fcca0-58db-4b3e-842a-49ea2a9fb224}</ProjectGuid>
     <RootNamespace>LoopWhileConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

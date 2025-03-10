@@ -1,292 +1,233 @@
+Ôªø// ArrayConsoleApplication.cpp 
+
 #include <iostream>
 
-//Napisz program, ktÛry wczyta 5 liczb a nastÍpnie wyúwietli je w odwrotnej kolejnoúci.
+// Napisz program, kt√≥ry wczyta np. 5 liczb 
+// a nastƒôpnie wy≈õwietli je w odwrotnej kolejno≈õci.
 void task1()
 {
-    const unsigned int ARRAY_NUMBER_SIZE = 5;
-   
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        std::cout << "Podaj " << (i + 1) << " liczbÍ\n";
-        std::cin >> numbers[i];
-    }
+	/*
+	int number0, number1, number2, number3;
 
-    for (int i = ARRAY_NUMBER_SIZE - 1; i >= 0; i--)
-    {
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n";
+	std::cout << "Podaj 1 liczbƒô\n";
+	std::cin >> number0;
+	std::cout << "Podaj 2 liczbƒô\n";
+	std::cin >> number1;
+	std::cout << "Podaj 3 liczbƒô\n";
+	std::cin >> number2;
+	std::cout << "Podaj 4 liczbƒô\n";
+	std::cin >> number3;
+	std::cout << number3 << ", " << number2 << ", " << number1 << ", " << number0 << "\n";
+	*/
+
+	const unsigned int ARRAY_NUMBERS_SIZE = 5;
+	int numbers[ARRAY_NUMBERS_SIZE];
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		std::cout << "Podaj " << (i + 1) << " liczbƒô\n";
+		std::cin >> numbers[i];
+	}
+
+	for (int i = ARRAY_NUMBERS_SIZE - 1; i >= 0; i--)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
 }
 
-//Program, ktÛry wype≥ni tablice (100 elementowπ) kolejnymi liczbami od 1 do 99, a nastÍpnie obliczy sumÍ oraz úredniπ liczb parzystych.
+//Napisz program obliczajƒÖcy ≈õredniƒÖ arytmetycznƒÖ element√≥w w tablicy liczb ca≈Çkowitych.
 void task2()
 {
-    const unsigned short ARRAY_NUMBER_SIZE = 100;
-    
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 1; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        numbers[i] = i;
-        std::cout << numbers[i] << " ,";
-    }
+	const unsigned int ARRAY_NUMBERS_SIZE = 5;
+	int numbers[ARRAY_NUMBERS_SIZE];
 
-    std::cout << "\n";
-    
-    int sum = 0;
-    for (int i = 1; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        if (numbers[i] % 2 == 0)
-        {
-            sum = sum + numbers[i];
-        }
-        
-    }
-    
-    std::cout << "\n";
-    std::cout << "Suma liczb parzystych tablicy wynosi: " << sum << "\n";
-   
-    double arithmeticMeanOfEvenNumbers = sum * 1.0/ ARRAY_NUMBER_SIZE;
+	srand(time(NULL));
+	std::cout << "Liczby w kolekcji:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		numbers[i] = rand() % 11;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
 
-    std::cout << "årednia arytmetyczna tych liczb wynosi: " << arithmeticMeanOfEvenNumbers;
+	//liczƒô ≈õredniƒÖ
+	int sum = numbers[0];
+	for (int i = 1; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		sum = sum + numbers[i];
+		//sum += numbers[i];
+	}
+
+	double avg = sum * 1.0 / ARRAY_NUMBERS_SIZE;
+
+	std::cout << "Suma: " << sum << "\n";
+	std::cout << "≈örednia to: " << avg << "\n";
 }
 
-//Napisz program ktÛry przyjmie od uøytkownika listÍ ocen z pewnego przedmiotu i obliczy ich úredniπ arytmetycznπ.
-/*Funkcje programu :
-
-*Poproú uøytkownika o wprowadzenie kaødej oceny.
-*Zapisz oceny w tablicy.
-*Oblicz úredniπ arytmetycznπ ocen.
-*Wyúwietl úredniπ ocen na ekranie.
-*/
-
+//Napisz program, kt√≥ry uzupe≈Çni tablicƒô liczbami losowymi
+// a nastƒôpnie znajdzie minimum oraz maksimum.
 void task3()
 {
-    std::cout << "Podaj swoje oceny z jednego dowolnego przedmiotu szkolnego, moøesz podaÊ maksymalnie 10 ocen\n";
-    std::cout << "Napisz z jakiego przedmiotu obliczasz úredniπ. Napisz to w sposÛb np. historii, biologii, chemii, angielskiego itd.\n";
-    std::string subjectFromUser;
-    std::cin >> subjectFromUser;
+	const unsigned int ARRAY_NUMBERS_SIZE = 10;
+	int numbers[ARRAY_NUMBERS_SIZE];
 
-    const unsigned int ARRAY_NUMBERS_SIZE = 10;
-    int grades[ARRAY_NUMBERS_SIZE];
-    int sum = 0;
+	srand(time(NULL));
+	std::cout << "Liczby w kolekcji:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		numbers[i] = rand() % 100;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
 
-    for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++) {
-        bool grade = false;
-        while (grade == false) 
-        {
-            std::cout << "Podaj swojπ " << (i + 1) << " ocenÍ: ";
-            std::cin >> grades[i];
-            if (grades[i] >= 1 && grades[i] <= 6) 
-            {
-                grade = true;
-                std::cout << "\n";
-                sum = sum + grades[i];
-            }
-            else 
-            {
-                std::cout << "Podana ocena jest w z≥ej skali. Podaj ocenÍ z zakresu od 1 do 6.\n";
-            }
-        }
-    }
+	int max = numbers[0];
+	for (int i = 1; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		if (numbers[i] > max)
+			max = numbers[i];
+	}
+	std::cout << "Najwiƒôksza liczba to " << max << "\n";
 
-    double arithmeticAverage = sum * 1.0 / ARRAY_NUMBERS_SIZE;
-    std::cout << "Twoja úrednia ocen z " + subjectFromUser <<  " wynosi: " << arithmeticAverage << "\n";
+	int min = numbers[0];
+	for (int i = 1; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		if (numbers[i] < min)
+			min = numbers[i];
+	}
+	std::cout << "Najmniejsza liczba to " << min << "\n";
 }
 
-//Program obliczajπcy úredniπ arytmetycznπ elementÛw w tablicy liczb ca≥kowitych.
+//Napisz program, kt√≥ry wczyta numer dnia tygodania 
+// a nastƒôpnie wy≈õwietli nazwƒô tego dnia lub komunikat b≈Çedu.
 void task4()
 {
-    const unsigned int ARRAY_NUMBER_SIZE = 5;
+	int dayNumberFromUser;
+	std::cout << "Podaj numer dnia tygodnia:\n";
+	std::cin >> dayNumberFromUser;
 
-    srand(time(NULL));
+	std::string nameOfDayInWeek[7] = { "Poniedzia≈Çek", "Wtorek" };
+	nameOfDayInWeek[0] = "Poniedzia≈Çek";
+	nameOfDayInWeek[1] = "Wtorek";
+	nameOfDayInWeek[2] = "≈öroda";
+	nameOfDayInWeek[3] = "Czwartek";
+	nameOfDayInWeek[4] = "PiƒÖtek";
+	nameOfDayInWeek[5] = "Sobota";
+	nameOfDayInWeek[6] = "Niedziela";
 
-    std::cout << "Liczby w kolekcji: \n";
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        numbers[i] = rand() % 11;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n\n";
-
-    int sum = numbers[0]; //przyspieszenie poprzez przypisanie sumie indeksu 0, co skraca pÍtle. W poprzednch programach nie zastosowane
-    for (int i = 1; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        sum = sum + numbers[i];
-    }
-
-    double arithmeticAverage = sum * 1.0 / ARRAY_NUMBER_SIZE;
-
-    std::cout << "årednia arytmetyczna tych elementÛw tablicy wynosi: " << arithmeticAverage << "\n";
+	if (dayNumberFromUser >= 0 && dayNumberFromUser <= 6)
+	{
+		std::cout << "Nazwa dnia to " << nameOfDayInWeek[dayNumberFromUser] << "\n";
+	}
+	else
+	{
+		std::cout << "Nie ma takiego dnia\n";
+	}
 }
 
-//Program szukajπcy maksimum i minimum z tablicy wype≥nionej liczbami pseudolosowymi;
+// Napisz program, kt√≥ry posortuje tablicƒô liczb sposobem przez wyb√≥r.
 void task5()
 {
-    const unsigned int ARRAY_NUMBER_SIZE = 100;
+	const unsigned int ARRAY_NUMBERS_SIZE = 10;
+	int numbers[ARRAY_NUMBERS_SIZE];
 
-    srand(time(NULL));
+	srand(time(NULL));
+	std::cout << "Liczby w kolekcji:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		numbers[i] = rand() % 100;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
 
-    std::cout << "Liczby w kolekcji: \n";
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        numbers[i] = rand() % 101;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n\n";
+	//algorytm sortujƒÖcy
+	for (int i = 0; i <= ARRAY_NUMBERS_SIZE - 2; i++)
+	{
+		int minIndex = i;
+		for (int j = i + 1; j < ARRAY_NUMBERS_SIZE; j++)
+		{
+			if (numbers[j] < numbers[minIndex])
+				minIndex = j;
+		}
+		int tmp = numbers[i];
+		numbers[i] = numbers[minIndex];
+		numbers[minIndex] = tmp;
+	}
 
-    int max = numbers[0];
-    for (int i = 1; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        if (numbers[i] > max)
-            max = numbers[i];
-    }
-    std::cout << "Maksymalna liczba pod wzglÍdem wielkoúci w tablicy wynosi: " << max << "\n";
-
-    //Algorytm uniwersalny, min i max przypisujemy index 0 z tablicy, poniewaø mamy pewnoúÊ øe bÍdzie indeks 0 oraz przestawiamy 
-    //"i" w pÍtli na 1 bo nie ma sensu porÛwnywaÊ tego samego indeksu.
-
-    int min = numbers[0];
-    for (int i = 1; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        if (numbers[i] < min)
-            min = numbers[i];
-    }
-    std::cout << "Najmniejsza liczba pod wzglÍdem wielkoúci w tablicy wynosi: " << min << "\n";
+	std::cout << "Po posortowaniu:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
 }
 
-//Napisz program ktÛry wczyta numer dnia tygodnia, a nastÍpnie wyúwietli nazwÍ tego dnia lub komunikat b≥Ídu.
+// Napisz program, kt√≥ry posortuje tablicƒô liczb metodƒÖ bƒÖbelkowƒÖ.
 void task6()
 {
-    int numberFromUser;
-    std::cout << "Podaj numer dnia tygodnia: \n";
-    std::cin >> numberFromUser;
+	const unsigned int ARRAY_NUMBERS_SIZE = 10;
+	int numbers[ARRAY_NUMBERS_SIZE];
 
-    std::string nameOfDay[7];
-     nameOfDay[0] = "Poniedzia≥ek";
-     nameOfDay[1] = "Wtorek";
-     nameOfDay[2] = "åroda";
-     nameOfDay[3] = "Czwartek";
-     nameOfDay[4] = "Piπtek";
-     nameOfDay[5] = "Sobota";
-     nameOfDay[6] = "Niedziela";
-    
-    if (numberFromUser >= 0 && numberFromUser <= 6)
-    {
-        std::cout << "Nazwa dnia to: " << nameOfDay[numberFromUser] << " \n";
-    }
-    else 
-    {
-        std::cout << "Nie ma takiego dnia \n";
-    }
+	srand(time(NULL));
+	std::cout << "Liczby w kolekcji:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		numbers[i] = rand() % 100;
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
+
+	//algorytm sortujƒÖcy
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE - 1; i++)
+	{
+		for (int j = 0; j < ARRAY_NUMBERS_SIZE - 1; j++)
+		{
+			if (numbers[j] > numbers[j + 1])
+			{
+				int tmp = numbers[j];
+				numbers[j] = numbers[j + 1];
+				numbers[j + 1] = tmp;
+			}
+		}
+	}
+
+	std::cout << "Po posortowaniu:\n";
+	for (int i = 0; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n\n";
 }
 
-//Algorytm sortujπcy (wyboru).
+//Napisz program, kt√≥ry wyznaczy wszystkie liczby pierwsze od 2 do zadeklarowanego zakresu.
+//Metoda sito Eratostenesa.
 void task7()
 {
-    const unsigned int ARRAY_NUMBER_SIZE = 10;
+	const int ARRAY_NUMBERS_SIZE = 50;
+	bool sieve[ARRAY_NUMBERS_SIZE];
+	for (int i = 2; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		sieve[i] = true;
+	}
 
-    srand(time(NULL));
-
-    std::cout << "Liczby w kolekcji: \n";
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        numbers[i] = rand() % 100;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n\n";
-
-    for (int i = 0; i < ARRAY_NUMBER_SIZE - 1; i++)
-    {
-        int minIndex = i;
-        for (int j = i + 1; j < ARRAY_NUMBER_SIZE; j++)
-        {
-            if (numbers[j] < numbers[minIndex])
-                minIndex = j;
-        }
-        int tmp = numbers[i];
-        numbers[i] = numbers[minIndex];
-        numbers[minIndex] = tmp;
-    }
-
-    std::cout << "Po sortowaniu:\n";
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        std::cout << numbers[i] << ", ";
-    }
-}
-
-//Algorytm sortujπcy (bπbelkowy).
-void task8()
-{
-    const unsigned int ARRAY_NUMBER_SIZE = 10;
-
-    srand(time(NULL));
-
-    std::cout << "Liczby w kolekcji: \n";
-    int numbers[ARRAY_NUMBER_SIZE];
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        numbers[i] = rand() % 100;
-        std::cout << numbers[i] << ", ";
-    }
-    std::cout << "\n\n";
-
-    for (int i = 0; i < ARRAY_NUMBER_SIZE - 1; i++)
-    {
-        for (int j = 0; j < ARRAY_NUMBER_SIZE - 1; j++)
-        {
-            if (numbers[j] > numbers[j + 1])
-            {
-                int tmp = numbers[j];
-                numbers[j] = numbers[j + 1];
-                numbers[j + 1] = tmp;
-            }
-        }
-    }
-
-    std::cout << "Po sortowaniu:\n";
-    for (int i = 0; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        std::cout << numbers[i] << ", ";
-    }
-}
-
-//Sito Eratostenesa
-void task9()
-{
-    const unsigned int ARRAY_NUMBER_SIZE = 50;
-    bool sieve[ARRAY_NUMBER_SIZE];
-
-    for (int i = 2; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        sieve[i] = true;
-    }
-
-    for (int i = 2; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        if (sieve[i] == true)
-        {
-            for (int j = i + i; j < ARRAY_NUMBER_SIZE; j = j + i)
-            {
-                sieve[j] = false;
-            }
-        }
-    }
-
-    std::cout << "Liczby pierwsze:\n";
-    for (int i = 2; i < ARRAY_NUMBER_SIZE; i++)
-    {
-        if (sieve[i] == true)
-            std::cout << i << ",";
-    }
+	for (int i = 2; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		if (sieve[i]/* == true*/)
+		{
+			for (int j = i + i; j < ARRAY_NUMBERS_SIZE; j = j + i)
+				sieve[j] = false;
+		}
+	}
+	
+	std::cout << "Liczby pierwsze:\n";
+	for (int i = 2; i < ARRAY_NUMBERS_SIZE; i++)
+	{
+		if (sieve[i]/* == true*/)
+			std::cout << i << ",";
+	}
 }
 
 int main()
 {
-    setlocale(LC_CTYPE, "polish");
-    task9();
+	task1();
+	task1();
 }

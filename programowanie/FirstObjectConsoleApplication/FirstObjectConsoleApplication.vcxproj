@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0d7de798-ca9a-458a-aae3-c3fd9bd4af69}</ProjectGuid>
+    <ProjectGuid>{3e9e7194-aae9-4583-8151-990681830a47}</ProjectGuid>
     <RootNamespace>FirstObjectConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FirstObjectConsoleApplication.cpp" />
     <ClCompile Include="BankAccount.cpp" />
+    <ClCompile Include="FirstObjectConsoleApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BankAccount.h" />

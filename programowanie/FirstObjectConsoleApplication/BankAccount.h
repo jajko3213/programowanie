@@ -3,27 +3,23 @@
 
 class BankAccount
 {
-//private oznacza, ¿e te rzeczy s¹ dostêpne tylko w klasie. Pola powinny byæ prywatne.
 private:
-	double balance; // stan konta
+	double balance; // saldo
 	std::string owner; //w³aœciciel
-	std::string currency; // waluta
-
-public:
-
-	//konstruktory publiczne
-	BankAccount();
-	BankAccount(double b, std::string o, std::string c);
+	std::string currency; //waluta
 
 	void SetBalance(double b);
 
+public:
+
+	BankAccount();
+	BankAccount(double b, std::string o, std::string c);
+	
 	double GetBalance();
-	 
+
 	void AccountInformation();
-	
+
 	void DepositToAccount(double amount);
-	
-	bool WidthDrawFromAccount(double amount);
-	
-	void TransferBetweenAccounts(BankAccount& targetAccount, double amount);
+	bool WidthdrawalFromAccount(double amount);
+	void TransferBetweenAcounts(BankAccount& targetAccount, double amount);
 };
