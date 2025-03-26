@@ -29,38 +29,21 @@ int main()
 		numbers.push_back(n);
 	}
 
-
+	/*
 	std::cout << "Odczytane liczby:\n";
 	for (int i = 0; i < numbers.size(); i++)
 	{
 		std::cout << numbers[i] << ", ";
 	}
+	std::cout << "\n";
+	*/
 
-	std::cout << "odzczytanie liczby";
+	std::cout << "Odczytane liczby:\n";
 	for (int num : numbers)
 	{
-		std::cout << num << "\n";
+		std::cout << num << ", ";
 	}
-
 	std::cout << "\n";
 
-	int counter = 0;
-	for (int num : numbers)
-	{
-		int firstDigit;
-		int lastDigit = num % 10;
 
-		int tmpNum = num;
-		do
-		{
-			firstDigit = tmpNum % 10;
-			tmpNum = tmpNum / 10;
-		} while (tmpNum != 0);
-
-		if (firstDigit == lastDigit)
-		{
-			counter++
-		}
-		std::cout << counter << "\n";
-	}
 }
