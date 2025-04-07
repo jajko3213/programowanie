@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Matura2022Czerwiec.cpp">
+    <ClCompile Include="Matura2022CzerwiecConsoleApplication.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="liczby.txt">
-      <Filter>Resource Files</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="przyklad.txt">
-      <Filter>Resource Files</Filter>
-    </CopyFileToFolders>
   </ItemGroup>
 </Project>

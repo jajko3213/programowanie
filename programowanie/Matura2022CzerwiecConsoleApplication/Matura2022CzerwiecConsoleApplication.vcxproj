@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{21bc4793-fd72-4679-8911-565f939a35f6}</ProjectGuid>
-    <RootNamespace>Matura2022Czerwiec</RootNamespace>
+    <ProjectGuid>{9413fd59-9f22-4938-9247-e4de39e14af1}</ProjectGuid>
+    <RootNamespace>Matura2022CzerwiecConsoleApplication</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Matura2022Czerwiec.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="liczby.txt" />
-    <CopyFileToFolders Include="przyklad.txt" />
+    <ClCompile Include="Matura2022CzerwiecConsoleApplication.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
