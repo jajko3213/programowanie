@@ -1,20 +1,110 @@
-﻿// Matura2022CzerwiecConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <fstream>
+#include <vector>
+
+bool isPrime(int number)
+{
+	if (number < 2)
+		return false;
+
+	for (int i = 2; i <= sqrt(number); i++)
+	{
+		if (number % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+int reversedNumber(int number)
+{
+	int reversed = 0;
+	while (number > 0)
+	{
+		reversed = reversed * 10 + number % 10;
+		number = number / 10;
+	}
+
+	return reversed;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//Zadanie pierwsze (na liczb)
+	setlocale(LC_CTYPE, "Polish");
+	std::ifstream file("przyklad.txt");
+	std::vector<int> numbers;
+	int number;
+
+	while (file >> number)
+	{
+		numbers.push_back(number);
+	}
+
+	for (int num : numbers)
+	{
+		if (reversedNumber(num) % 17 == 0)
+		{
+			std::cout << reversedNumber(num) << "\n";
+		}
+	}
+
+	//Zadanie drugie
+	int maxDifference = 0;  
+	int highest = 0;  
+	int reversedNum;
+
+	for (int num : numbers)
+	{
+		reversedNum = reversedNumber(num);  
+		int difference = abs(num - reversedNum);  
+
+		if (difference > maxDifference)
+		{
+			maxDifference = difference;  
+			highest = num;  
+		}
+	}
+	
+	std::cout << highest << " " << maxDifference << "\n";
+
+	//Zadanie trzecie
+	for (int num : numbers)
+	{
+		int reversedNum = reversedNumber(num);
+		if (isPrime(num) && isPrime(reversedNum))
+		{
+			std::cout << num << "\n";
+		}
+	}
+
+	//Zadanie czwarte
+	std::vector<int> uniqueNumbers;
+	std::vector<int> occurrences;
+
+	for (int i = 0; i < numbers.size(); i++) {
+		bool found = false;
+		for (int j = 0; j < uniqueNumbers.size(); j++) {
+			if (uniqueNumbers[j] == numbers[i]) {
+				occurrences[j]++; 
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			uniqueNumbers.push_back(numbers[i]);
+			occurrences.push_back(1);
+		}
+	}
+
+	int uniqueCount = uniqueNumbers.size();
+	int countTwice = 0, countThrice = 0;
+
+	for (int i = 0; i < occurrences.size(); i++) {
+		if (occurrences[i] == 2) countTwice++;
+		if (occurrences[i] == 3) countThrice++;
+	}
+
+	std::cout << uniqueCount << " " << countTwice << " " << countThrice << "\n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
